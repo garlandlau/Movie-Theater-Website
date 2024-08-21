@@ -1,0 +1,185 @@
+<!-- web site layout from url=https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_float -->
+<!-- Navigation bar and drop down menu from url=https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_tabs_dropdown&stacked=h -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Movie Theater Database</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<h2>&lt;Moive Theater DataBase&gt;</h2>
+<h6><b>Team Members:</b> &lt;Kazim, Garland, and Alen&gt;<br> </h6>
+
+  
+</header>
+
+	
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="http://server/~username/template.html">Home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Relations <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="http://server/~username/Movie.php">Movie</a></li>
+		<li><a href="http://server/~username/Rating.php">Rating</a></li>
+		<li><a href="http://server/~username/Shows.php#">Shows</a></li>
+		<li><a href="http://server/~username/Customer.php#">Customer</a></li>
+		<li><a href="http://server/~username/Booking.php#">Booking</a></li>
+		<li><a href="http://server/~username/Payments.php#">Payments</a></li>
+		<li><a href="http://server/~username/Seats.php#">Seats</a></li>                        
+      </ul>
+    </li>
+	<li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Queries<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="http://server/~username/query1.php#">Query1</a></li>
+		<li><a href="http://server/~username/query2.php#">Query2</a></li>
+		<li><a href="http://server/~username/query3.php#">Query3</a></li>
+		<li><a href="http://server/~username/query4.php#">Query4</a></li>
+		<li><a href="http://server/~username/query5.php#">Query5</a></li>                        
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<section>
+  <nav>
+     <ul>
+		<li><b>Relations:</b>
+    </ul>
+		<ol>
+			<li><a href="http://server/~username/Movie.php">Movie</a> 
+			</li><li><a href="http://server/~username/Rating.php">Rating</a>
+			</li><li><a href="http://server/~username/Shows.php#">Shows</a>
+			</li><li><a href="http://server/~username/Customer.php#">Customer</a>
+			</li><li><a href="http://server/~username/Booking.php#">Booking</a>
+			</li><li><a href="http://server/~username/Payments.php#">Payments</a>
+			</li><li><a href="http://server/~username/Seats.php#">Seats</a>
+		</li></ol>
+		<br><br>
+  </nav>
+  
+  <article><h1>Queries</h1>
+		<ol>
+			<li><a href="http://server/~username/query1.php#">Movie Ratings</a>: &lt;This is the SQL statment to display the ratings and movie showings of each moive&gt;
+			</li><li><a href="http://server/~username/query2.php#">Average Price & Ratings</a>: &lt;This is the SQL statment to display the average rating of the movies and the average cost of a seat&gt;
+			</li><li><a href="http://server/~username/query3.php#">Highest Rated Movies</a>: &lt;This is the SQL statment to display the highest rated moives&gt;
+			</li><li><a href="http://server/~username/query4.php#">Sold Out</a>: &lt;This is the SQL statment to display which seats are full for which movie&gt;
+			</li><li><a href="http://server/~username/query5.php#">Active Customers</a>: &lt;This is the SQL statment to display which customers have booked seats or not&gt;
+		</li></ol>
+</section>
+
+<section>
+<nav>
+</nav>
+
+<article>
+<i><b>Ad-hoc Query:</b><br><br>
+<br><br>
+<form action="http://server/~username/result.php" method="POST" >
+      <table>
+        <tbody><tr>
+          <td align="right">
+            <strong>Please enter your query here<br></strong>
+          </td>
+          <td>
+            <input size="30" name="query" type="text" fdprocessedid="fuwt0d">
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <input value="Clear" type="reset">
+          </td>
+          <td>
+            <input value="Submit" type="submit" fdprocessedid="gmkp49">
+          </td>
+        </tr>
+      </tbody></table>
+    </form>
+</i></li></ul><i>
+<p></p>
+</i></font><i><i>
+<hr noshade="noshade" size="2">
+<p></p>
+
+</article>
+</section>
+
+<footer>
+<!--  <p>Footer</p> -->
+</footer>
+
+</body>
+</html>
+
