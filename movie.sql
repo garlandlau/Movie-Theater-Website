@@ -1,4 +1,4 @@
-# Milestone 3
+# Movie Theater SQL Database
 # Garland, Alen, Kazim
 
 #1. (5 points) Write SQL statements to create tables for your database application. Pick suitable data
